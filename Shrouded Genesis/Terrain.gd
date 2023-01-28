@@ -4,7 +4,7 @@ func _ready():
 	var noise = OpenSimplexNoise.new()
 	
 	noise.period = 100
-	noise.octaves = 5
+	noise.octaves = 3
 	
 	var plane_mesh = PlaneMesh.new()
 	plane_mesh.size = Vector2(400,400)
@@ -22,7 +22,7 @@ func _ready():
 	
 	for i in range(data_tool.get_vertex_count()):
 		var vertex = data_tool.get_vertex(i)
-		vertex.y = noise.get_noise_3d(vertex.x, vertex.y, vertex.z) * 60
+		vertex.y = noise.get_noise_3d(vertex.x, vertex.y, vertex.z) * 20
 		
 		data_tool.set_vertex(i, vertex)
 		

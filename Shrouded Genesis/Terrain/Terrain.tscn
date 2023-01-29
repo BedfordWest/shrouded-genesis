@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Terrain.gd" type="Script" id=1]
-[ext_resource path="res://terrain.material" type="Material" id=2]
+[ext_resource path="res://Terrain/Terrain.gd" type="Script" id=1]
+[ext_resource path="res://Terrain/Materials/terrain.material" type="Material" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 

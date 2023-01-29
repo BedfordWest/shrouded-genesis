@@ -7,8 +7,8 @@
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.557209, 0.830372, 0, -0.830372, 0.557209, 0, 32.2161, -0.8507 )
-light_color = Color( 0.309804, 0.278431, 0.403922, 1 )
-light_energy = 0.412
+light_color = Color( 0.513726, 0.454902, 0.686275, 1 )
+light_energy = 0.632
 shadow_reverse_cull_face = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

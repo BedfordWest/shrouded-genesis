@@ -1,7 +1,8 @@
 extends KinematicBody
 
 # How fast the player moves in meters per second.
-export var speed = 14
+export var start_speed = 14
+var speed = start_speed
 # The downward acceleration when in the air, in meters per second squared.
 export var fall_acceleration = 75
 export var jump_impulse = 20
@@ -11,6 +12,7 @@ var velocity = Vector3.ZERO
 func _physics_process(delta):
 	# We create a local variable to store the input direction.
 	var direction = Vector3.ZERO
+	speed = start_speed
 
 	# We check for each move input and update the direction accordingly.
 	if Input.is_action_pressed("move_right"):
@@ -42,11 +44,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 func updateGroundVelocity(direction, delta):
-	if Input.is_action_just_pressed("run"):
+	if Input.is_action_pressed("run"):
 		speed /= 18 * delta
 		
-	if Input.is_action_just_released("run"):
-		speed *= 18 * delta
 	# Ground velocity
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed

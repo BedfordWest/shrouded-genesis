@@ -21,6 +21,7 @@ uniform vec4 grass_color : hint_color = vec4(0.5, 1.0, 0.5, 1.0);
 
 varying flat vec3 out_color;
 
+// Interpolate a color between two values
 vec3 lerpColor(vec4 a, vec4 b, float t) {
 	float rr = a.r + (b.r - a.r) * t;
 	float gg = a.g + (b.g - a.g) * t;
@@ -31,8 +32,10 @@ vec3 lerpColor(vec4 a, vec4 b, float t) {
 void vertex() {
 	UV=UV*uv1_scale.xy+uv1_offset.xy;
 	
+	// Start by setting the color equal to our sand color
 	out_color = vec3(sand_color.r, sand_color.g, sand_color.b);
 	
+	// If there is any elevation, interpolate the new color based on height
 	if (VERTEX.y > 0.0){
 		out_color = lerpColor(sand_color, grass_color, clamp((VERTEX.y) / 3.0, 0.0, 1.0));
 	}
@@ -41,7 +44,7 @@ void vertex() {
 void fragment() {
 	vec2 base_uv = UV;
 	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = out_color * albedo_tex.rgb;
+	ALBEDO = out_color * albedo_tex.rgb; // Set the color based on our interpolated value
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
 	SPECULAR = specular;

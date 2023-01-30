@@ -1,15 +1,25 @@
 extends Spatial
 
 func _ready():
+	var noise = create_noise()
+	var mesh_instance = create_mesh(noise)
+	adjust_mesh_for_level(mesh_instance)
+	# Add the mesh instance to the scene
+	add_child(mesh_instance)
 	
-	# Use a noise generator to make "interesting" terrain templates
+# Use a noise generator to make "interesting" terrain templates
+func create_noise():
 	var noise = OpenSimplexNoise.new()
 	# How many hills/spikes in the terrain are there? Higher = more
 	noise.period = 100
 	# How "noisy" is the terrain? 9 is max and "most noisy". Lower = smoother
 	noise.octaves = 3
 	
-	# Use a plane to represent the ground. Mesh applies materials.
+	return noise
+
+# Create the MeshInstance to be used for the terrain
+func create_mesh(noise):
+		# Use a plane to represent the ground. Mesh applies materials.
 	var plane_mesh = PlaneMesh.new()
 	plane_mesh.size = Vector2(400,400)
 	# How many triangles should be in the mesh? Higher = more polys
@@ -47,10 +57,11 @@ func _ready():
 	# Create the MeshInstance so we can add to the scene
 	var mesh_instance = MeshInstance.new()
 	mesh_instance.mesh = surface_tool.commit()
-	mesh_instance.set_surface_material(0, load("res://terrain.material"))
 	
 	# Add physics collisions to the mesh instance
 	mesh_instance.create_trimesh_collision()
-
-	# Finally, add the mesh instance to the scene
-	add_child(mesh_instance)
+	return mesh_instance
+	
+# Make level-specific adjustments to the terrain
+func adjust_mesh_for_level(mesh_instance):
+	mesh_instance.set_surface_material(0, load("res://Terrain/Materials/terrain.material"))

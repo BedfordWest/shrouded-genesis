@@ -7,6 +7,11 @@ func _ready():
 	# Add the mesh instance to the scene
 	add_child(mesh_instance)
 	
+	var scenery_placer = SceneryPlacer.new(mesh_instance)
+	var trees = scenery_placer.get_trees(200)
+	for tree in trees:
+		add_child(tree)
+	
 # Use a noise generator to make "interesting" terrain templates
 func create_noise():
 	var noise = OpenSimplexNoise.new()

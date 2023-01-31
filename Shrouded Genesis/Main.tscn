@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.1553, 0 )
 transform = Transform( 1, 0, 0, 0, 0.707884, 0.706329, 0, -0.706329, 0.707884, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
-transform = Transform( 1, 0, 0, 0, 0.930603, -0.36603, 0, 0.36603, 0.930603, 0, -4.79602, 33.2132 )
+transform = Transform( 1, 0, 0, 0, 0.890935, -0.45413, 0, 0.45413, 0.890935, -4.61821, -5.62209, 35.0586 )
 far = 386.4
 
 [node name="Terrain" parent="." instance=ExtResource( 2 )]

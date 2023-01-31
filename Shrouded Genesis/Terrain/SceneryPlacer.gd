@@ -29,5 +29,7 @@ func get_trees(amount):
 		var tree_node = load("res://Terrain/DeadTree1.tscn").instance()
 		tree_node.translate(tree_vertex)
 		tree_node.name  = "TreeNode{num}".format({"num":tree})
+		tree_node.rotate_y(random.randf_range(0, PI * 2))
+		tree_node.scale *= random.randf_range(0.5, 1.5)
 		tree_array.append(tree_node)
 	return tree_array

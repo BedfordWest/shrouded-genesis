@@ -12,7 +12,7 @@ func _init(mesh_instance):
 	# get surface 0 into mesh data tool
 	_mdt.create_from_surface(m, 0)
 	
-func get_trees(amount):
+func get_scenery(scene, amount):
 	if(!_mesh_instance):
 		push_error("You must set the mesh instance using set_mesh() before placing scenery!")
 	
@@ -26,7 +26,7 @@ func get_trees(amount):
 		var tree_index = random.randi_range(0,vtx_count)
 		# Now set the vertex to an actual vertex (Vector3) from the mesh
 		var tree_vertex = _mdt.get_vertex(tree_index)
-		var tree_node = load("res://Terrain/DeadTree1.tscn").instance()
+		var tree_node = load(scene).instance()
 		tree_node.translate(tree_vertex)
 		tree_node.name  = "TreeNode{num}".format({"num":tree})
 		tree_node.rotate_y(random.randf_range(0, PI * 2))

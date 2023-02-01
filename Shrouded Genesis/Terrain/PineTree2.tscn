@@ -31,5 +31,7 @@ surfaces/1 = {
 }
 
 [node name="Pine tree 2" type="MeshInstance"]
-transform = Transform( 2.33928, 0, 0, 0, 2.33928, 0, 0, 0, 2.33928, -47.6504, 2.91517, -520.788 )
+transform = Transform( 2.33928, 0, 0, 0, 2.33928, 0, 0, 0, 2.33928, 0, 0, 0 )
 mesh = SubResource( 8 )
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 2 )

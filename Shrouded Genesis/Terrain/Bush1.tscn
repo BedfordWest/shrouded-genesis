@@ -18,6 +18,6 @@ surfaces/0 = {
 }
 
 [node name="Bush 1" type="MeshInstance"]
-transform = Transform( 2.7636, 0, 0, 0, 2.7636, 0, 0, 0, 2.7636, -4.97536, 1.44337, -11.4037 )
+transform = Transform( 2.7636, 0, 0, 0, 2.7636, 0, 0, 0, 2.7636, 0, 0, 0 )
 mesh = SubResource( 4 )
 material/0 = ExtResource( 1 )

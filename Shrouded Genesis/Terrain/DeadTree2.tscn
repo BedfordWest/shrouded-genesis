@@ -18,5 +18,6 @@ surfaces/0 = {
 }
 
 [node name="Dead tree 2" type="MeshInstance"]
-transform = Transform( 0.354399, 0, 0, 0, 0.354399, 0, 0, 0, 0.354399, -42.5089, 1.48526, -514.629 )
+transform = Transform( 0.354399, 0, 0, 0, 0.354399, 0, 0, 0, 0.354399, 0, 0, 0 )
 mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )

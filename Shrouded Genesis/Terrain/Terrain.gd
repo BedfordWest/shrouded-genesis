@@ -8,17 +8,12 @@ func _ready():
 	add_child(mesh_instance)
 	
 	var scenery_placer = SceneryPlacer.new(mesh_instance)
-	var scenery = []
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/DeadTree1.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/DeadTree2.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/DeadTree3.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/PineTree1.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/PineTree2.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/Bush1.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/Bush2.tscn", 30))
-	scenery.append_array(scenery_placer.get_scenery("res://Terrain/Bush3.tscn", 30))
+	var level_config = "res://Configs/darkwood.cfg"
+	var scenery = scenery_placer.get_scenery(level_config)
 	for scenery_piece in scenery:
 		add_child(scenery_piece)
+		
+	print("Debugging!")
 	
 # Use a noise generator to make "interesting" terrain templates
 func create_noise():

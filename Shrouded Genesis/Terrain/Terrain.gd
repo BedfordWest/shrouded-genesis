@@ -12,8 +12,6 @@ func _ready():
 	var scenery = scenery_placer.get_scenery(level_config)
 	for scenery_piece in scenery:
 		add_child(scenery_piece)
-		
-	print("Debugging!")
 	
 # Use a noise generator to make "interesting" terrain templates
 func create_noise():

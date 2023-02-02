@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Terrain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Terrain/Terrain.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="Node"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.557209, 0.830372, 0, -0.830372, 0.557209, 0, 32.2161, -0.8507 )
-light_color = Color( 0.513726, 0.454902, 0.686275, 1 )
+light_color = Color( 0.266667, 0.227451, 0.388235, 1 )
 light_energy = 0.632
 shadow_reverse_cull_face = true
 
@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.1553, 0 )
 transform = Transform( 1, 0, 0, 0, 0.707884, 0.706329, 0, -0.706329, 0.707884, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
-transform = Transform( 1, 0, 0, 0, 0.930603, -0.36603, 0, 0.36603, 0.930603, 0, -4.79602, 33.2132 )
+transform = Transform( 1, 0, 0, 0, 0.890935, -0.45413, 0, 0.45413, 0.890935, -4.61821, -5.62209, 35.0586 )
 far = 386.4
 
 [node name="Terrain" parent="." instance=ExtResource( 2 )]

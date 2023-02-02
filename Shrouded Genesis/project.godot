@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "SceneryPlacer",
+"language": "GDScript",
+"path": "res://Terrain/SceneryPlacer.gd"
+} ]
+_global_script_class_icons={
+"SceneryPlacer": ""
+}
+
 [application]
 
 config/name="Shrouded Genesis"
@@ -66,4 +76,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"
